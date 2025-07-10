@@ -163,3 +163,11 @@ for ax in axs[:, 0]:  # First column
     ax.set_ylabel('Frequency')
 plt.savefig('plots/ft_histo_combined.png', dpi=300, bbox_inches="tight")
 plt.close()
+
+# boxplot of each petal and sepal measurment
+data.boxplot(by="species")
+plt.savefig('plots/species_boxplot.png', dpi=300, bbox_inches="tight")
+plt.close()
+
+print("groupby test ======")
+pprint(data.groupby("species")["petal_length"].describe())
